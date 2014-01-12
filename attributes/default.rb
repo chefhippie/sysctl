@@ -23,3 +23,9 @@ default["sysctl"]["settings"] = {
   "net.ipv6.conf.all.forwarding" => 0,
   "kernel.sysrq" => 1
 }
+
+default["sysctl"]["removed_files"] = %w(
+  /etc/sysctl.d/README.sysctl
+  /etc/sysctl.d/99-hetzner.conf
+  /etc/sysctl.d/99-sysctl.conf
+)

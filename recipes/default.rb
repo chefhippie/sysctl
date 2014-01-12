@@ -27,3 +27,13 @@ template "/etc/sysctl.conf" do
      node["sysctl"]
    )
 end
+
+node["sysctl"]["removed_files"].each do |name|
+  file name do
+    action :delete
+
+    only_if do
+      ::File.exists? name
+    end
+  end
+end
