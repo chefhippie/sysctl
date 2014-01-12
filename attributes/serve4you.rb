@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sysctl
-# Attributes:: default
+# Attributes:: server4you
 #
 # Copyright 2013, Thomas Boerger
 #
@@ -17,9 +17,14 @@
 # limitations under the License.
 #
 
-default["sysctl"]["settings"] = {
-  "net.ipv4.ip_forward" => 0,
+default["sysctl"]["server4you"]["settings"] = {
+  "kernel.printk" => "3 4 1 3",
+  "net.ipv4.conf.default.rp_filter" => 1,
+  "net.ipv4.conf.all.rp_filter" => 1,
   "net.ipv4.tcp_syncookies" => 1,
-  "net.ipv6.conf.all.forwarding" => 0,
-  "kernel.sysrq" => 1
+  "net.ipv4.conf.all.secure_redirects" => 1,
+  "net.ipv4.conf.all.send_redirects" => 0,
+  "net.ipv4.conf.all.accept_source_route" => 0,
+  "net.ipv6.conf.all.accept_source_route" => 0,
+  "net.ipv4.conf.all.log_martians" => 1
 }

@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: sysctl
-# Attributes:: default
+# Recipe:: hetzner
 #
 # Copyright 2013, Thomas Boerger
 #
@@ -17,9 +17,7 @@
 # limitations under the License.
 #
 
-default["sysctl"]["settings"] = {
-  "net.ipv4.ip_forward" => 0,
-  "net.ipv4.tcp_syncookies" => 1,
-  "net.ipv6.conf.all.forwarding" => 0,
-  "kernel.sysrq" => 1
-}
+sysctl "hetzner" do
+   values node["sysctl"]["hetzner"]["settings"]
+   action [:create, :set]
+end
