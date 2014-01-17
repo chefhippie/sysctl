@@ -18,7 +18,6 @@
 #
 
 default["sysctl"]["server4you"]["settings"] = {
-  "kernel.printk" => "3 4 1 3",
   "net.ipv4.conf.default.rp_filter" => 1,
   "net.ipv4.conf.all.rp_filter" => 1,
   "net.ipv4.tcp_syncookies" => 1,
