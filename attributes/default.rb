@@ -18,14 +18,12 @@
 #
 
 default["sysctl"]["settings"] = {
-  "net.ipv4.ip_forward" => 0,
-  "net.ipv4.tcp_syncookies" => 1,
-  "net.ipv6.conf.all.forwarding" => 0,
+  "net.ipv4.ip_forward" => 1,
+  "net.ipv6.conf.all.forwarding" => 1,
   "kernel.sysrq" => 1
 }
 
 default["sysctl"]["removed_files"] = %w(
   /etc/sysctl.d/README.sysctl
   /etc/sysctl.d/99-hetzner.conf
-  /etc/sysctl.d/99-sysctl.conf
 )
